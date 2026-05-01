@@ -1,12 +1,11 @@
 #include <stdio.h>
 
-const n = 4
-
 int main(void)
 {
-    for (int row = 0; row < 4; row++)
+   const int n = 4;
+    for (int row = 0; row < n; row++)
     {
-        for (int column = 0; column < 4; column++)
+        for (int column = 0; column < n; column++)
         {
             printf("#");
         }
