@@ -26,13 +26,12 @@ int main(void)
         {
             sentences++;
         }
-    }
-    printf("letters: %i\n", letters);
-    printf("words: %i\n", words);
-    printf("sentences: %i\n", sentences);
-
-        
+    }    
+         
+        float L = ((float)letters/words) * 100;
+        float S = ((float)sentences/words) * 100;
+        float index = 0.0588 * L - 0.0296 * S - 15.8;
+        int grade = round(index);
+        printf("Grade: %i\n", grade);
     
-
-
 }
