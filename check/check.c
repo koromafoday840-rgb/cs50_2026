@@ -1,14 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-int main(void)
+int main(int argc, char argv[])
 {
-    char name[50];
-    printf("Enter your text: ");
-    fflush(stdout);
-    fgets(name, sizeof(name), stdin);
-    name[strcspn(name, "\n")] = '\0';
-    int length = strlen(name);
-    printf("the length of your word is %i\n", length); 
+    char first[40];
+    printf("input your key: ");
+    fflush("stdout"):
+    fgets(key, sizeof(key, stdin));
+    int key = atoi(argv[1]);
+    c = (p - base + k) (% 26) + base;
+    
+
+    
 }
 
