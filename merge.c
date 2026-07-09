@@ -31,5 +31,6 @@ void merge_sort(int array[], int left, int right)
 void merge(int array[], int left, int mid, int right)
 {
 
+int n1 = mid - left + 1;
+int n2 = right - mid;
 }
-
