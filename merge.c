@@ -44,4 +44,23 @@ for (int j = 0; j < n2; j++)
 {
     R[j] = array[mid + 1 + j];
 }
+int i = 0;
+int j = 0;
+int k = left;
+
+while (i < n1 && j < n2)
+{
+    if (L[i] <= R[j])
+    {
+        array[k] = L[i];
+        i++;
+    }
+    else
+    {
+        array[k] = R[j];
+        j++;
+    }
+    k++;
+}
+
 }
