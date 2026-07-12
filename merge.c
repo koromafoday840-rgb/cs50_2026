@@ -62,5 +62,17 @@ while (i < n1 && j < n2)
     }
     k++;
 }
+while(i < n1)
+{
+    array[k] = L[i];
+    i++;
+    k++;
+}
+while(j < n2)
+{
+    array[k] = R[j];
+    j++;
+    k++;
+}
 
 }
