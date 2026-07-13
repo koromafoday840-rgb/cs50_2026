@@ -30,7 +30,11 @@ void merge_sort(int array[], int left, int right)
 }
 void merge(int array[], int left, int mid, int right)
 {
-
+/* 
+  CONCEPT: Calculating temporary workbench sizes.
+  - n1: mid - left + 1 (add 1 so we don't skip counting the starting element)
+  - n2: right - mid   (naturally counts elements starting after mid)
+*/
 int n1 = mid - left + 1;
 int n2 = right - mid;
 int L[n1];
