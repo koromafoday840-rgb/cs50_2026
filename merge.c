@@ -39,7 +39,11 @@ int n1 = mid - left + 1;
 int n2 = right - mid;
 int L[n1];
 int R[n2];
-
+/*
+THE KEY IDEA: We are about to copy data into our temporary workbench.
+L[i]: This code fills our new split left workbench that starts from index 0.
+array[left + i]: This line of code reads from our big array, using the "left" anchor to find our starting piont and stepping forward slots.
+*/
 for (int i = 0; i < n1; i++)
 {
     L[i] = array[left + i];
