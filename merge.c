@@ -70,6 +70,13 @@ while (i < n1 && j < n2)
     }
     k++;
 }
+/* 
+  CLEANUP:
+   The main comparison loop stops the instant ONE workbench runs out of elements (using '&&').
+   These loops cleanly sweep any remaining, leftover elements from the other workbench 
+         directly back into the main array. No more comparisons are needed because L and R 
+         are already perfectly sorted.
+*/
 while(i < n1)
 {
     array[k] = L[i];
