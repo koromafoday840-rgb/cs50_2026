@@ -13,9 +13,7 @@ typedef struct
     int vote;
 }candidate;
 candidate candidates[MAX];
-    int candidate_count;
-bool vote(char *name);
-void print_winner(void);
+int candidate_count;
 int main(int argc, char *argv[])
 {
     
