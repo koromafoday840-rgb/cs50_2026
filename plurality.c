@@ -10,7 +10,7 @@ void print_winner(void);
 typedef struct
 {
     char *name;
-    int vote;
+    int votes;
 }candidate;
 candidate candidates[MAX];
 int candidate_count;
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < candidate_count; i++)
     {
         candidates[i].name = argv[i + 1];
-        candidates[i].vote = 0;
+        candidates[i].votes = 0;
     }
     int voter_count;
 
