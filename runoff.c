@@ -42,19 +42,26 @@ int main(int argc, char *argv[])
 
     bool vote(int voter, int rank, char *name)
     {
-        for (int i = 0; i < max_voters; i++)
+        for (int i = 0; i < candidate_count; i++)
         {
             if (strcmp(candidates[i].name, name) == 0)
             {
                 preferences[voter][rank] = i;
+                return true;
             }
-            else
-            {
-                printf("Invalid vote.");
-                return 1;
-            }
+        } 
+        {     
+            printf("Invalid vote.");
+            return false;
         }
+    }
+
+        
+        
+       
+        
+    
                 
             
         
-    }
+    
