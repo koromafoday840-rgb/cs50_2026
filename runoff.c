@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         candidates[i].votes = 0;
      }
 }    
-
+// The vote function validates and records the choices of the voters.
     bool vote(int voter, int rank, char *name)
     {
         for (int i = 0; i < candidate_count; i++)
@@ -50,10 +50,10 @@ int main(int argc, char *argv[])
                 return true;
             }
         } 
-        {     
+            
             printf("Invalid vote.");
             return false;
-        }
+        
     }
 
         
