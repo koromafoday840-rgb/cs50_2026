@@ -13,6 +13,8 @@ typedef struct
     bool eliminated;
 }candidate;
 
+int tabulate();
+
 bool vote(int voter, int rank, char *name);
 
 candidate candidates[MAX];
@@ -53,8 +55,27 @@ int main(int argc, char *argv[])
             
             printf("Invalid vote.");
             return false;
-        
     }
+    
+    int tabulate()
+    {
+        candidates[k].votes = 0;
+        for (int i = 0; i < max_voters; i++)
+        {
+            for (int j = 0; j < candidate_count; j++)
+            {
+                int candidate_index = preferences[i][j];
+                if (candidates[candidate_index].eliminated == false)
+                {
+                    candidates[].votes++;
+                    break;
+                }
+
+
+            }
+        }
+    }
+    
 
         
         
