@@ -13,7 +13,9 @@ typedef struct
     bool eliminated;
 }candidate;
 
-int tabulate();
+void tabulate(void);
+
+bool print_winner(bool);
 
 bool vote(int voter, int rank, char *name);
 
@@ -39,6 +41,7 @@ int main(int argc, char *argv[])
     {
         candidates[i].name = argv[ i + 1];
         candidates[i].votes = 0;
+        candidates[i].eliminated = false;
      }
 }    
 // The vote function validates and records the choices of the voters.
@@ -57,9 +60,12 @@ int main(int argc, char *argv[])
             return false;
     }
     
-    int tabulate()
+    void tabulate(void)
     {
-        candidates[k].votes = 0;
+        for (int k = 0; k < candidate_count; k++)
+        {    
+            candidates[k].votes = 0;
+        }
         for (int i = 0; i < max_voters; i++)
         {
             for (int j = 0; j < candidate_count; j++)
@@ -67,7 +73,7 @@ int main(int argc, char *argv[])
                 int candidate_index = preferences[i][j];
                 if (candidates[candidate_index].eliminated == false)
                 {
-                    candidates[].votes++;
+                    candidates[candidate_index].votes++;
                     break;
                 }
 
@@ -75,14 +81,19 @@ int main(int argc, char *argv[])
             }
         }
     }
-    
 
-        
-        
-       
-        
-    
-                
-            
-        
-    
+    bool print_winner(bool)
+    {
+        if (candidates[candidate_index].eliminated == false)
+        {
+            for (int i = 0; i < candidate_count; i++)
+            {
+                if (candidates[i].votes > max_voters)
+                {
+                    return true;
+                }
+            }
+
+        }
+        return false;
+    }       
