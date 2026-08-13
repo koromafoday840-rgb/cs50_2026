@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         }
         if (!vote(name_buffer))
         {
-            printf("Invalid vote");
+            printf("Invalid vote\n");
         }
     }
     print_winner();
