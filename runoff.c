@@ -15,7 +15,7 @@ typedef struct
 
 void tabulate(void);
 
-bool print_winner(bool);
+bool print_winner();
 
 bool vote(int voter, int rank, char *name);
 
@@ -82,18 +82,20 @@ int main(int argc, char *argv[])
         }
     }
 
-    bool print_winner(bool)
+    bool print_winner()
     {
-        if (candidates[candidate_index].eliminated == false)
-        {
-            for (int i = 0; i < candidate_count; i++)
+        for (int i = 0; i < candidate_count; i++)
             {
-                if (candidates[i].votes > max_voters)
+                if (candidates[i].votes > max_voters / 2 )
                 {
-                    return true;
+                    if (candidates[i].eliminated == false)
+                    {  
+                        printf("%s", candidates[i].name);
+                        return true;
+                    }
                 }
             }
-
-        }
-        return false;
-    }       
+            return false;
+     }
+        
+         
