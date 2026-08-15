@@ -15,7 +15,9 @@ typedef struct
 
 void tabulate(void);
 
-bool print_winner();
+bool print_winner(void);
+
+int find_min(void);
 
 bool vote(int voter, int rank, char *name);
 
@@ -95,7 +97,22 @@ int main(int argc, char *argv[])
                     }
                 }
             }
-            return false;
+            return false;   
      }
+    int find_min()
+    {
+        int least_votes = 0;
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if (candidates[i].eliminated == false)
+            {
+                if (candidates[i].votes < least_votes)
+                {
+                    least_votes = candidates[i].votes;
+                }
+
+            }
+        }
         
-         
+    }
+    
