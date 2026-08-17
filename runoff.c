@@ -19,6 +19,8 @@ bool print_winner(void);
 
 int find_min(void);
 
+bool is_tie(void);
+
 bool vote(int voter, int rank, char *name);
 
 candidate candidates[MAX];
@@ -101,7 +103,7 @@ int main(int argc, char *argv[])
      }
     int find_min()
     {
-        int least_votes = 0;
+        int least_votes = max_voters;
         for (int i = 0; i < candidate_count; i++)
         {
             if (candidates[i].eliminated == false)
@@ -113,6 +115,24 @@ int main(int argc, char *argv[])
 
             }
         }
-        
+        return least_votes;
     }
-    
+   bool is_tie()
+   {
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if (candidates[i].eliminated == true)
+            {
+                if (candidates[i].votes == least_votes)
+                {
+                    printf("Tie");
+                    return true;
+                }
+                else
+                {
+                    printf("No tie");
+                    return false;
+                }
+            }
+        }
+   } 
