@@ -104,12 +104,12 @@ int main(int argc, char *argv[])
      }
     int find_min()
     {
-        int least_votes = max_voters;
+        int least_votes = -1;
         for (int i = 0; i < candidate_count; i++)
         {
             if (candidates[i].eliminated == false)
             {
-                if (candidates[i].votes < least_votes)
+                if (least_votes == -1 || candidates[i].votes < least_votes)
                 {
                     least_votes = candidates[i].votes;
                 }
