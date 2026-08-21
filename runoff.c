@@ -19,6 +19,8 @@ bool print_winner(void);
 
 int find_min(void);
 
+void eliminate(int min);
+
 bool is_tie(int min);
 
 bool vote(int voter, int rank, char *name);
@@ -132,4 +134,18 @@ int main(int argc, char *argv[])
     
         }
         return true;
+    }
+    void eliminate(int min)
+    {
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if (!candidates[i].eliminated)
+            {
+                if (candidates[i].votes == min)
+                {
+                    candidates[i].eliminated = true;
+                }
+            }
+        }
+        
     }
